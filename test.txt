@@ -1,0 +1,10 @@
+1、首先创建共享和名称，不要自动挂载
+2、进入docker的虚拟机，创建文件
+mkdir /home/share
+cd /home
+ls
+3、执行命令与机子共享
+mount -t vboxsf share /home/share
+cd /home/share
+ls
+4、看到此文件证明ok了
