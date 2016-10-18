@@ -32,15 +32,25 @@ toolbox采用的加速方法
 `docker images`
 
 ### 启动一个Ubuntu容器，并将Ubuntu的shell作为入口
-`docker run -it ubuntu:latest sh -c '/bin/bash'`
+
+```shell
+docker run -it ubuntu:latest sh -c '/bin/bash'
+docker run --name test -it ...
+```
 
 - `-i`表示这是一个交互容器，会将当前标准输入重新定向到容器中的标准输入，而不是终止程序
 - `-t`指为这个容器分配一个终端
+- `--name` 为容器起个名字
 
-### 查看当前运行容器
-`docker ps -a`
+### 容器基本操作命令
 
-- 需要记住的只有两个，一个是容器的ID，一个是NAME
+```shell
+docker ps # 列出正在运行的容器
+docker ps -a # 列出所有容器
+docker rm [ID/NAME] # 删除容器
+docker rmi [name] # 删除镜像 
+```
+**需要记住的只有两个，一个是容器的ID，一个是NAME**
 
 ### 退出容器
 `Ctrl +　D` ,需要重新启动可以使用
